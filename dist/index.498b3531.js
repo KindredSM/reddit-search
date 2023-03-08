@@ -599,7 +599,16 @@ function truncateText(text, limit) {
     return text.substring(0, shortened);
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./redditapi":"cj9r6"}],"gkKU3":[function(require,module,exports) {
+},{"./redditapi":"cj9r6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cj9r6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = {
+    search: function(searchTerm, searchLimit, sortBy) {
+        return fetch(`http://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`).then((res)=>res.json()).then((data)=>data.data.children.map((data)=>data.data)).catch((err)=>console.log(err));
+    }
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -629,15 +638,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"cj9r6":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-exports.default = {
-    search: function(searchTerm, searchLimit, sortBy) {
-        return fetch(`http://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`).then((res)=>res.json()).then((data)=>data.data.children.map((data)=>data.data)).catch((err)=>console.log(err));
-    }
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["eCcS6","aMYem"], "aMYem", "parcelRequire94c2")
+},{}]},["eCcS6","aMYem"], "aMYem", "parcelRequire94c2")
 
 //# sourceMappingURL=index.498b3531.js.map
