@@ -1,0 +1,24 @@
+body,
+#search,
+.card {
+  background-color: rgb(24, 24, 24);
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: left;
+  border: none;
+}
+
+.img-fluid {
+  width: 20rem;
+}
+
+a {
+  color: red;
+}
