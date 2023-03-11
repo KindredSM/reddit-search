@@ -28,8 +28,8 @@ searchForm.addEventListener("submit", (e) => {
         output += `<video width="100%" height="auto" controls>
               <source src="${post.media.reddit_video.fallback_url}" type="video/mp4">
             </video>`;
-      } else {
-        output += `<a href="${post.thumbnail}" target="_blank">
+      } else if (post.thumbnail && post.thumbnail != "self") {
+        output += `<a href="${post.url}" target="_blank">
               <img class="img-fluid img-thumbnail" src="${post.thumbnail}" alt="">
             </a>`;
       }
