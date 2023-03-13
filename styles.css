@@ -32,17 +32,17 @@ a {
 
 .btn {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  height: 40px;
 }
+
+p {
+  margin: 0;
+}
+
 #loader {
-  position: absolute;
   display: none;
-  right: 20px;
-  border: 3px solid #f3f3f3; /* Light grey */
-  border-top: 3px solid rgb(24, 24, 24); /* Blue */
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid rgb(24, 24, 24);
   border-radius: 50%;
   width: 20px;
   height: 20px;
