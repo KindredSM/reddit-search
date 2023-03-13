@@ -1,4 +1,12 @@
-import reddit from "./redditapi";
+function searchReddit(searchTerm, searchLimit, sortBy) {
+  return fetch(
+    `http://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`
+  )
+    .then((res) => res.json())
+    .then((data) => data.data.children.map((data) => data.data))
+    .catch((err) => console.log(err));
+}
+
 const searchForm = document.getElementById("search-form");
 const searchInput = document.getElementById("search-input");
 
@@ -14,7 +22,7 @@ searchForm.addEventListener("submit", (e) => {
   if (searchTerm === "") {
     showMessage("Please add a search term", "alert-danger");
   }
-  reddit.search(searchTerm, searchLimit, sortBy).then((results) => {
+  searchReddit(searchTerm, searchLimit, sortBy).then((results) => {
     let output = '<div class="card-columns">';
 
     results.forEach((post) => {
