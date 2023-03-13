@@ -9,6 +9,7 @@ function searchReddit(searchTerm, searchLimit, sortBy) {
 
 const searchForm = document.getElementById("search-form");
 const searchInput = document.getElementById("search-input");
+const loader = document.getElementById("loader");
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -21,8 +22,13 @@ searchForm.addEventListener("submit", (e) => {
 
   if (searchTerm === "") {
     showMessage("Please add a search term", "alert-danger");
+    loader.style.display = "none";
+    return;
   }
+
+  loader.style.display = "block";
   searchReddit(searchTerm, searchLimit, sortBy).then((results) => {
+    loader.style.display = "none";
     let output = '<div class="card-columns">';
 
     results.forEach((post) => {
