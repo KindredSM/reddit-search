@@ -53,7 +53,6 @@ searchForm.addEventListener("submit", (e) => {
   });
 });
 
-// truncate text
 function truncateText(text, limit) {
   const shortened = text.indexOf("", limit);
   if (shortened == -1) return text;
