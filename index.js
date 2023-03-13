@@ -26,7 +26,7 @@ searchForm.addEventListener("submit", (e) => {
     return;
   }
 
-  loader.style.display = "block";
+  loader.style.display = "flex";
   searchReddit(searchTerm, searchLimit, sortBy).then((results) => {
     loader.style.display = "none";
     let output = '<div class="card-columns">';
