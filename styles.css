@@ -35,9 +35,11 @@ body,
 .thumbnail {
   max-width: 20rem;
   margin-top: 20px;
-
   border-radius: 2px;
-  border: 1px solid rgb(108, 108, 108);
+}
+
+.card-text {
+  margin-top: 10px;
 }
 .btn {
   margin-top: 20px;

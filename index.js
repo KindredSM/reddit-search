@@ -60,6 +60,9 @@ searchForm.addEventListener("submit", (e) => {
         }
       }
       output += `<p class="card-text">${truncateText(post.selftext, 100)}</p>
+      <a class="subreddit-link" href="https://www.reddit.com/u/${
+        post.author
+      }" target="_blank"> <p class="card-text">u/${post.author}</p></a>
             <a href="${
               post.url
             }" target="_blank" class="btn btn-dark">Read Post</a> 
