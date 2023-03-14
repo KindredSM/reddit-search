@@ -29,6 +29,7 @@ searchForm.addEventListener("submit", (e) => {
 
   loader.style.display = "flex";
   searchText.style.display = "none";
+
   searchReddit(searchTerm, searchLimit, sortBy).then((results) => {
     loader.style.display = "none";
     searchText.style.display = "flex";
@@ -46,9 +47,17 @@ searchForm.addEventListener("submit", (e) => {
               <source src="${post.media.reddit_video.fallback_url}" type="video/mp4">
             </video>`;
       } else if (post.thumbnail && post.thumbnail != "self") {
-        output += `<a href="${post.url}" target="_blank">
-              <img class="img-fluid img-thumbnail" src="${post.thumbnail}" alt="">
-            </a>`;
+        const preview = post.preview;
+        if (preview && preview.images && preview.images.length > 0) {
+          const thumbnail = preview.images[0].source.url.replace(/&amp;/g, "&");
+          output += `<a href="${post.url}" target="_blank">
+                <img class="thumbnail" src="${thumbnail}" alt="">
+              </a>`;
+        } else {
+          output += `<a href="${post.url}" target="_blank">
+                <img class="thumbnail" src="${post.thumbnail}" alt="">
+              </a>`;
+        }
       }
       output += `<p class="card-text">${truncateText(post.selftext, 100)}</p>
             <a href="${
