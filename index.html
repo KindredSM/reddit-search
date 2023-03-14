@@ -20,19 +20,33 @@
   <body>
     <nav class="navbar navbar-dark bg-danger mb-3">
       <div class="container">
-        <span class="navbar-brand">Search Reddit</span>
+        <span class="navbar-brand">
+          <a href="" class="link"
+            ><img src="svg/iconmonstr-reddit-4.svg" alt="logo" class="nav-logo"
+          /></a>
+          <p>
+            <span class="reddit-link"
+              ><a href="" class="link">Redsearch</a></span
+            >
+          </p>
+        </span>
       </div>
     </nav>
     <div id="search-container" class="container">
       <div id="search" class="card card-body mb-2">
-        <h4>Search Reddit</h4>
+        <h4>
+          Search
+          <a href="https://www.reddit.com/" class="link" target="_blank"
+            >Reddit</a
+          >
+        </h4>
         <form id="search-form">
           <div class="form-group">
             <input
               type="text"
               id="search-input"
               class="form-control mb-3"
-              placeholder="Search Term..."
+              placeholder="Search..."
               autocomplete="off"
             />
           </div>
