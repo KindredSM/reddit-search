@@ -4,6 +4,7 @@ body,
   background-color: rgb(24, 24, 24);
   font-family: "Poppins", sans-serif;
   color: white;
+  overflow-x: hidden;
 }
 
 .navbar-brand {
