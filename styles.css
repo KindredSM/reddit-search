@@ -7,15 +7,43 @@ body,
   overflow-x: hidden;
 }
 
+#search {
+  padding-top: 100px;
+}
+
 .navbar-brand {
   display: flex;
   gap: 10px;
+}
+
+.btn {
+  background-image: linear-gradient(
+    70deg,
+    hsl(0deg 100% 53%) 0%,
+    hsl(12deg 100% 52%) 59%,
+    hsl(18deg 100% 51%) 100%
+  );
+  color: white;
+}
+.navbar {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  background-image: linear-gradient(
+    70deg,
+    hsl(0deg 100% 53%) 0%,
+    hsl(12deg 100% 52%) 59%,
+    hsl(18deg 100% 51%) 100%
+  );
 }
 
 .nav-logo {
   filter: invert(100%) saturate(100%) brightness(98%);
 }
 
+.bi {
+  z-index: 100;
+}
 .link {
   color: white;
 }
@@ -31,6 +59,8 @@ body,
   flex-direction: column;
   text-align: left;
   border: none;
+  border-radius: 2px;
+  background-color: rgb(37, 37, 37);
 }
 
 .thumbnail {
